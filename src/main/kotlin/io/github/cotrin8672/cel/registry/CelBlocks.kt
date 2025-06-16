@@ -8,6 +8,7 @@ import com.simibubi.create.foundation.data.SharedProperties
 import com.simibubi.create.foundation.data.TagGen.pickaxeOnly
 import com.tterrag.registrate.util.entry.BlockEntry
 import io.github.cotrin8672.cel.CreateEnderLink.REGISTRATE
+import io.github.cotrin8672.cel.content.block.SharedStorageBlockItem
 import io.github.cotrin8672.cel.content.block.tank.EnderTankBlock
 import io.github.cotrin8672.cel.content.block.vault.EnderVaultBlock
 import net.minecraft.client.renderer.RenderType
@@ -28,7 +29,7 @@ object CelBlocks {
         .transform(pickaxeOnly())
         .blockstate(BlockStateGen.horizontalAxisBlockProvider(false))
         .transform(mountedItemStorage(CelMountedStorageTypes.SHARED_ITEM))
-        .item()
+        .item(::SharedStorageBlockItem)
         .build()
         .register()
 
@@ -36,14 +37,16 @@ object CelBlocks {
         .block<EnderTankBlock>("ender_tank", ::EnderTankBlock)
         .initialProperties(SharedProperties::copperMetal)
         .properties {
-            it.noOcclusion()
+            it
+                .noOcclusion()
                 .isRedstoneConductor { _, _, _ -> true }
+                .explosionResistance(1200f)
         }
         .transform(pickaxeOnly())
         .blockstate { c, p -> p.simpleBlock(c.get(), AssetLookup.standardModel(c, p)) }
         .transform(mountedFluidStorage(CelMountedStorageTypes.SHARED_FLUID))
         .addLayer { Supplier(RenderType::cutoutMipped) }
-        .item()
+        .item(::SharedStorageBlockItem)
         .build()
         .register()
 

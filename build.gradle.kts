@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.kotlin)
     alias(libs.plugins.modDevGradle)
     alias(libs.plugins.modPublisher)
+    idea
 }
 
 val modId: String by project
@@ -112,7 +113,7 @@ dependencies {
 
 //    modCompileOnly("top.theillusivec4.curios:curios-forge:5.14.1+1.20.1:api")
 //    modRuntimeOnly("top.theillusivec4.curios:curios-forge:5.14.1+1.20.1")
-//    modRuntimeOnly(libs.jei)
+    modImplementation(libs.jei)
 }
 
 publisher {
@@ -128,7 +129,7 @@ publisher {
     version.set(project.version.toString())
     displayName.set("$modName $modVersion")
     setGameVersions(libs.versions.minecraft.get())
-    setLoaders(ModLoader.NEOFORGE)
+    setLoaders(ModLoader.FORGE)
     setCurseEnvironment(CurseEnvironment.BOTH)
     artifact.set("build/libs/${base.archivesName.get()}-${project.version}.jar")
 
@@ -180,4 +181,11 @@ tasks.named<Wrapper>("wrapper").configure {
 
 tasks.withType<JavaCompile> {
     options.encoding = "UTF-8"
+}
+
+idea {
+    module {
+        isDownloadJavadoc = true
+        isDownloadSources = true
+    }
 }

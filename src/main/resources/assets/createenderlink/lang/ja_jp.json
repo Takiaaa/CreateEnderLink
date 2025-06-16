@@ -4,8 +4,15 @@
   "createenderlink.tooltip.frequency.click_to_replace": "アイテムでクリックして置き換え  ",
   "block.createenderlink.ender_vault": "エンダー金庫",
   "block.createenderlink.ender_tank": "エンダータンク",
+  "item.createenderlink.scope_filter": "スコープフィルタ",
+  "item.createenderlink.scope_filter.tooltip.condition1": "右クリックした時",
+  "item.createenderlink.scope_filter.tooltip.behaviour1": "_設定画面_を開きます。",
+  "item.createenderlink.scope_filter.tooltip.summary": "_プレイヤー情報_と_アイテム_を組み合わせて_固有の周波数_を生成し、他プレイヤーとの_周波数の衝突を防ぐ_ことができます。",
   "createenderlink.gui.goggles.storage_stat": "ストレージの統計:",
   "createenderlink.gui.goggles.same_frequency_count": "リンク数:",
+  "createenderlink.gui.goggles.frequency_item": "周波数: ",
+  "createenderlink.gui.goggles.frequency_scope": "スコープ: ",
+  "createenderlink.gui.goggles.scope_global": "グローバル",
   "createenderlink.gui.goggles.block.singular": "ブロック",
   "createenderlink.gui.goggles.block.plural": "ブロック",
   "createenderlink.gui.goggles.at_current_loading": "現在ロード中",
@@ -23,5 +30,9 @@
   "createenderlink.ponder.ender_tank_sharing.text_2": "エンダータンクには周波数を設定するためのスロットがあります",
   "createenderlink.ponder.ender_tank_sharing.text_3": "スロットにアイテムを設定することで、周波数を決めることができます",
   "createenderlink.ponder.ender_tank_sharing.text_4": "同じ周波数を持つエンダータンクは内容物を共有します",
-  "createenderlink.ponder.ender_tank_sharing.text_5": "エンジニアのゴーグルを装着していると、現在リンクされているエンダータンクの数を確認できます"
+  "createenderlink.ponder.ender_tank_sharing.text_5": "エンジニアのゴーグルを装着していると、現在リンクされているエンダータンクの数を確認できます",
+  "createenderlink.storage_frequency.set": "周波数をコピーしました",
+  "createenderlink.storage_frequency.is_set": "周波数が設定されました",
+  "createenderlink.storage_frequency.craft_to_reset": "クラフトしてリセット",
+  "createenderlink.storage_frequency.not_holding_enough_scope_filter": "スコープフィルタが足りません"
 }

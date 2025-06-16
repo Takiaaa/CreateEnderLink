@@ -1,3 +1,3 @@
 ## Fixed
 
-Recipe datagen.
+- Fixed issue#32
